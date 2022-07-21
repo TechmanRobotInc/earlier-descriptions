@@ -1,0 +1,75 @@
+# __Earlier TM ROS1 descriptions vs moveit_config__
+
+Here are the simple descriptions and moveit_config packages (group name = "manipulator") provided earlier.<br/>
+> &rArr; Please see the section described in the __Deprecation Notice__ below.<br/>
+
+## __Usage__
+The user must first install the TM ROS1 driver, put the downloaded packages in the correct path of the TM ROS1 driver, and then compile it before it can be used normally.<br/>
+How to install the TM ROS1 driver? Please refer to the __Installation__ chapter in the introduction of __ROS1 Driver__.<br/>
+[_TM ROS1 Melodic driver_](https://github.com/TechmanRobotInc/tmr_ros1/) ``[https://github.com/TechmanRobotInc/tmr_ros1/blob/master/README.md] ``<br/>
+[_TM ROS1 Noetic driver_](https://github.com/TechmanRobotInc/tmr_ros1/tree/noetic) ``[https://github.com/TechmanRobotInc/tmr_ros1/blob/noetic/README.md] ``<br/> 
+
+### &sect; Update packages from this git repository
+Just clone some of the required packages from this git repository into the working directory and then build it.<br/>
+> * #### __Take TM5-900 Robot as an example__
+``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git "tm5_description"``<br/>
+``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git "tm5_900_moveit_config"``<br/>
+> * #### __Take TM5-700 Robot as an example__
+``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git "tm5_description"``<br/>
+``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git "tm5_700_moveit_config"``<br/>
+> * #### __Take TM12 Robot as an example__
+``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git "tm12_description"``<br/>
+``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git "tm12_moveit_config"``<br/>
+> * #### __Take TM14 Robot as an example__
+``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git "tm14_description"``<br/>
+``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git "tm14_moveit_config"``<br/>
+> * #### __Take a non-vision series of TM14 Robot as an example__
+``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git "tm14_description"``<br/>
+``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git "tm14_nonvision_moveit_config"``<br/>
+
+Or download the earlier-descriptions all and move all packages in the earlier-descriptions to your tmdriver_ws/src and compile.
+
+
+### &sect; MoveIt usage with earlier launch instructions
+> __ROS1 driver usage__
+> 
+> After the user has set up the ROS1 environment and built the TM driver based on the specific workspace, please enter your workspace `<workspace>` by launching the terminal, and remember to make the workspace visible to ROS.
+>
+> __Usage with MoveIt__ 
+>
+> See [Moveit tutorial](http://docs.ros.org/en/melodic/api/moveit_tutorials/html/doc/getting_started/getting_started.html).<br/>
+>
+> To bring up MoveIt environment in simulation mode with virtual TM Robot (Example: TM5-900), by typing
+>
+>
+> ```bash
+> roslaunch tm5_900_moveit_config tm5_900_moveit_planning_execution.launch sim:=True
+> ```
+>
+> Or with virtual TM Robot (Example: TM5-900 nonvision series), by typing
+>
+>
+> ```bash
+> roslaunch tm5_900_nonvision_moveit_config tm5_900_moveit_planning_execution.launch sim:=True
+> ```
+>
+> The user can also manipulate TM Robot (Example: TM5-900) in the real world, by typing<br/>
+> :bulb: Do you prepare the __TM Robot__ ready ? Make sure that TM Robot's operating software (__TMflow__) network settings are ready and the __Listen node__ is running.  
+>
+> ```bash
+> roslaunch tm5_900_moveit_config tm5_900_moveit_planning_execution.launch sim:=False robot_ip:=<robot_ip_address>
+> ```
+>
+> Or TM Robot (Example: TM5-900 nonvision series), by typing
+>
+> ```bash
+> roslaunch tm5_900_nonvision_moveit_config tm5_900_moveit_planning_execution.launch sim:=False robot_ip:=<robot_ip_address>
+> ```
+>
+> The parameter `<robot_ip_address>` means the IP address of the TM Robot.<br/>
+>:warning:[CAUTION] This demo will let the real TM Robot move, please be careful.<br/>
+
+## __Deprecation Notice__
+> The older TM ROS1 descriptions and moveit_config packages are no longer actively maintained.
+>> :bulb: Tip: We will continue to maintain work on the tm_description and corresponding moveit_config packages (group name ="tmr_arm") and recommend that users use the python script <sup>1</sup> to replace the nominal robot model with the specific kinematic parameters from your local TM Robot.<br/>
+> <sup>1</sup> For more detailed information, please refer to the __6. TM Robot corrected kinematics value loading and robot description file generation__ chapter in the ROS1 introduction of __TM ROS Driver__.
