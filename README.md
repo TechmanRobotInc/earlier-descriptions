@@ -14,7 +14,7 @@ How to install the TM ROS1 driver? Please refer to the __Installation__ section 
 ### &sect; Update packages and Installation
 > Clone this git repository by typing<br/>
 > ``git clone https://github.com/TechmanRobotInc/earlier-descriptions.git``<br/>
-> After the download done, move all packages or just move some required packages in this early-descriptions repository to your tmdriver_ws/src and build it to complete the installation.<br/>
+> After the download is done, move all packages or just move some required packages in this early-descriptions repository to your tmdriver_ws/src and build it to complete the installation.<br/>
 > Please refer to the __&sect; Usage with demo code & driver__ _(steps 1 to 4)_ section in the ROS1 introduction of __TM ROS Driver__.
 > ```bash
 > $ catkin_make
@@ -38,7 +38,7 @@ How to install the TM ROS1 driver? Please refer to the __Installation__ section 
 ``tm14_nonvision_moveit_config``<br/>
 >
 > Alternatively, the user can use [DownGit](https://downgit.github.io/#/home) to download a specific file from GitHub.<br/>
-> First, the user need to go to the specific folder you want to download, then just copy the link and paste it to the website [DownGit](https://downgit.github.io/#/home) to download the file.<br/>
+> First, the user needs to go to the specific folder you want to download, then just copy the link and paste it to the website [DownGit](https://downgit.github.io/#/home) to download the file.<br/>
 > Finally move the downloaded files to your tmdriver_ws/src and build it to complete the installation.<br/>
 >> For example, download the required files for TM5-900 Robot<br/>
 >> * __TM5-900 Robot required packages's URL__<br/>
@@ -56,14 +56,14 @@ How to install the TM ROS1 driver? Please refer to the __Installation__ section 
 >
 > See [Moveit tutorial](http://docs.ros.org/en/melodic/api/moveit_tutorials/html/doc/getting_started/getting_started.html).<br/>
 >
-> To bring up MoveIt environment in simulation mode with virtual TM Robot (Example: TM5-900), by typing
+> To bring up the MoveIt environment in simulation mode with a virtual TM Robot (Example: TM5-900), by typing
 >
 >
 > ```bash
 > roslaunch tm5_900_moveit_config tm5_900_moveit_planning_execution.launch sim:=True
 > ```
 >
-> Or with virtual TM Robot (Example: TM5-900 nonvision series), by typing
+> Or with virtual TM Robot (Example: TM5-900 non-vision series), by typing
 >
 >
 > ```bash
@@ -77,7 +77,7 @@ How to install the TM ROS1 driver? Please refer to the __Installation__ section 
 > roslaunch tm5_900_moveit_config tm5_900_moveit_planning_execution.launch sim:=False robot_ip:=<robot_ip_address>
 > ```
 >
-> Or TM Robot (Example: TM5-900 nonvision series), by typing
+> Or TM Robot (Example: TM5-900 non-vision series), by typing
 >
 > ```bash
 > roslaunch tm5_900_nonvision_moveit_config tm5_900_moveit_planning_execution.launch sim:=False robot_ip:=<robot_ip_address>
@@ -88,5 +88,5 @@ How to install the TM ROS1 driver? Please refer to the __Installation__ section 
 
 ## __Deprecation Notice__
 > The older TM ROS1 descriptions and moveit_config packages are no longer actively maintained.
->> :bulb: Tip: We now use the tm_description and corresponding moveit_config packages (group name ="tmr_arm") instead and recommend that users use the python script <sup>1</sup> to replace the nominal robot model with the specific kinematic parameters from your local TM Robot.<br/>
+>> :bulb: Tip: We now use the tm_description and corresponding moveit_config packages (group name ="tmr_arm") instead and recommend that users use the Python script <sup>1</sup> to replace the nominal robot model with the specific kinematic parameters from your local TM Robot.<br/>
 > <sup>1</sup> For more detailed information, please refer to the __6. TM Robot corrected kinematics value loading and robot description file generation__ chapter in the ROS1 introduction of __TM ROS Driver__.
